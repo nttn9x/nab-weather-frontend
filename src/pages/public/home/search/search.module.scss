@@ -1,0 +1,5 @@
+@import "../../../../styles/base/gutter";
+
+.container {
+  margin-bottom: #{$gutter * 6}em;
+}

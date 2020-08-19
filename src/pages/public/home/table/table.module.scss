@@ -1,0 +1,34 @@
+@import "src/styles/base/gutter";
+@import "src/styles/base/border";
+@import "src/styles/common/display";
+
+.card {
+  border-radius: $border-radius-component;
+  width: 150px;
+}
+
+
+.title {
+  text-transform: uppercase;
+}
+
+
+.icon-weather {
+  width: 100%;
+  text-align: center;
+
+  &_image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.min-temp {
+  margin-top: $gutter-container;
+  margin-bottom: $gutter-component;
+}
+
+.max-temp {
+  font-weight: 500;
+  margin-top: $gutter-component;
+}

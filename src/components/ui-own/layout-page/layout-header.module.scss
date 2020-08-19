@@ -1,0 +1,34 @@
+@import "src/styles/base/main.scss";
+@import "src/styles/base/mixins.scss";
+@import "src/styles/base/animation/fading_entrances/fadeInDown.scss";
+
+.header {
+  @include animated(fadeInDown);
+  transition: all 0.3s ease-in-out !important;
+  box-shadow: none !important;
+
+  &--animated {
+    @include animated(fadeInDown);
+  }
+
+  &--stop {
+    animation-name: unset;
+  }
+
+  &__title {
+    flex-grow: 1;
+    margin-right: $gutter-container !important;
+    margin-left: $gutter-container !important;
+  }
+
+}
+
+.toolbar {
+  padding-left: $gutter-base;
+  padding-right: $gutter-container;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}

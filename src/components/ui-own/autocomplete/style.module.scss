@@ -1,0 +1,36 @@
+@import "src/styles/base/gutter.scss";
+@import "src/styles/base/border.scss";
+@import "src/styles/base/background-color";
+@import "src/styles/base/box-shadow";
+@import "src/styles/common/display.scss";
+
+$width: 220px;
+
+.container {
+  @extend %display-row;
+  width: $width;
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 $gutter-component;
+  }
+}
+
+.popover {
+  width: $width;
+  height: 300px;
+  margin-top: 2px;
+  overflow: auto;
+
+  border-radius: $border-radius-component;
+  background: $background-color-lv0;
+  border: $border-solid-1px;
+}
+
+.highlight {
+  font-weight: bold;
+  background-color: transparent;
+}

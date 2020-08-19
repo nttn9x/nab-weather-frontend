@@ -1,0 +1,18 @@
+export default {
+  red: "Red",
+  pink: "Pink",
+  purple: "Purple",
+  deepPurple: "Deep Purple",
+  indigo: "Indigo",
+  blue: "Blue",
+  lightBlue: "Light Blue",
+  cyan: "Cyan",
+  teal: "Teal",
+  green: "Green",
+  lightGreen: "Light Green",
+  lime: "Lime",
+  yellow: "Yellow",
+  amber: "Amber",
+  orange: "Orange",
+  deepOrange: "Deep Orange",
+};
