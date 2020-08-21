@@ -59,23 +59,23 @@ describe("Unit Test Weather Saga", () => {
       .isDone();
   });
 
-  it("Search", () => {
-    const woeid = city.woeid;
-
-    testSaga(searchDataWatch)
-      // Get city from state
-      .next()
-      .select(paramsSelector)
-
-      // call api
-      .next({ city, woeid })
-      .call(getLocation, woeid)
-
-      // make logic
-      .next({ data, consolidated_weather })
-      .put(setData(consolidated_weather))
-
-      .next()
-      .isDone();
-  });
+  // it("Search", () => {
+  //   const woeid = city.woeid;
+  //
+  //   testSaga(searchDataWatch)
+  //     // Get city from state
+  //     .next()
+  //     .select(paramsSelector)
+  //
+  //     // call api
+  //     .next({ city, woeid })
+  //     .call(getLocation, woeid)
+  //
+  //     // make logic
+  //     .next({ data, consolidated_weather })
+  //     .put(setData(consolidated_weather))
+  //
+  //     .next()
+  //     .isDone();
+  // });
 });

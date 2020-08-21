@@ -9,7 +9,7 @@ const TableItem = () => {
       <div className={styles.card}>
         <Grid item xs={12} container spacing={1}>
           <Grid item xs={12}>
-            <Skeleton className={styles.card} variant={"rect"} height={200} />
+            <Skeleton aria-label={"plh-card"} className={styles.card} variant={"rect"} height={200} />
           </Grid>
           <Grid item xs={12}>
             <Skeleton width={"50%"} height={30} />
@@ -23,9 +23,6 @@ const TableItem = () => {
 const TableLoading = React.memo(() => {
   return (
     <Grid item xs={12} container spacing={3}>
-      <Grid item xs={12}>
-        <Skeleton width={250} height={30} />
-      </Grid>
       <TableItem />
       <TableItem />
       <TableItem />

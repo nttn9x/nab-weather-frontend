@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import Axios from "axios";
+import axios from "axios";
 import { useDispatch } from "react-redux";
 import styles from "./search.module.scss";
 
@@ -30,7 +30,7 @@ const Search = () => {
         }
       }
 
-      source = Axios.CancelToken.source();
+      source = axios.CancelToken.source();
 
       setState({ cities: [], loading: true });
 
@@ -39,7 +39,9 @@ const Search = () => {
         cancelToken: source.token,
       });
     } catch (e) {
-      dispatch(pushErrorMessage(e))
+      if (e.message !== "Cancel") {
+        dispatch(pushErrorMessage(e));
+      }
     }
 
     setState({ cities: newCities, loading: false });
@@ -56,6 +58,7 @@ const Search = () => {
     <Grid className={styles.container} container spacing={3}>
       <Grid item xs={2}>
         <AutoComplete
+          data-testid="h-s-input"
           autoFocus
           onSelect={onSelect}
           keyValue={"title"}

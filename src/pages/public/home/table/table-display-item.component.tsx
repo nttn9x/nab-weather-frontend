@@ -25,16 +25,22 @@ const TableItem: React.FC<IProps> = React.memo(({ data }) => {
   const minTemp = (data.min_temp || 0).toFixed(0);
 
   return (
-    <Grid component={"section"} item>
+    <Grid aria-label={"data"} component={"section"} item>
       <Card variant={"outlined"} className={styles.card}>
         <CardContent>
           <Typography variant={"caption"} color="textSecondary" gutterBottom>
             {data.applicable_date}
           </Typography>
-          <Typography variant="h5" component="h2" gutterBottom>
+          <Typography
+            aria-label={"data-date"}
+            variant="h5"
+            component="h2"
+            gutterBottom
+          >
             {day}
           </Typography>
           <TypographyNowrap
+            aria-label={"data-min-temp"}
             className={styles["min-temp"]}
             align={"center"}
             gutterBottom
@@ -45,15 +51,17 @@ const TableItem: React.FC<IProps> = React.memo(({ data }) => {
           </TypographyNowrap>
           <div className={styles["icon-weather"]}>
             <img
+              aria-label={"data-image"}
               className={styles["icon-weather_image"]}
               src={getIcon(data.weather_state_abbr)}
               alt={`Error ${data.weather_state_abbr}`}
             />
           </div>
-          <Typography align={"center"} gutterBottom>
+          <Typography align={"center"} gutterBottom aria-label={"data-state"}>
             {data.weather_state_name}
           </Typography>
           <TypographyNowrap
+            aria-label={"data-max-temp"}
             className={styles["max-temp"]}
             align={"center"}
             color={"primary"}

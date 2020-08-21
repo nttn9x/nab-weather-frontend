@@ -2,7 +2,7 @@ import { selectCity, setData, setSearchingStatus } from "./weather.action";
 import reducer, { initialState } from "./weather.reducer";
 import { city, consolidated_weather } from "./weather.data-mock";
 
-describe("Weather Reducer", () => {
+describe("Weather Reducser", () => {
   describe("SET_FILTER", () => {
     const action = selectCity(city);
     const newState = reducer(initialState, action);

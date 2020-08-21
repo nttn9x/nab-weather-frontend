@@ -4,6 +4,7 @@ import _size from "lodash/size";
 import { TIMEOUT } from "constants/common";
 
 export interface IProps {
+  id?: string;
   loading?: boolean;
   autoFocus?: boolean;
   placeholder?: string;
@@ -43,7 +44,7 @@ export const useAutoCompleteHook = ({
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+    const { value } = event.target;
     setTextSearch(value);
 
     clearTimeout(timeoutId);

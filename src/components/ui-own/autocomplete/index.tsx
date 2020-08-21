@@ -42,6 +42,7 @@ const AutoComplete: React.FC<IProps> = (props) => {
           onChange={handleChange}
           autoFocus={autoFocus}
           placeholder={placeholder || t("search")}
+          aria-label={"h-s-input"}
         />
         <Popper
           open={open}

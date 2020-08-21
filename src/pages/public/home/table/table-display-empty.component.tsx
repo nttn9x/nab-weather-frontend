@@ -7,6 +7,7 @@ const TableDisplayEmpty = () => {
   const { t } = useTranslation(["common", "home"]);
   return (
     <Grid
+      aria-label={"data-empty"}
       item
       xs={12}
       container
@@ -16,12 +17,12 @@ const TableDisplayEmpty = () => {
       direction="column"
     >
       <Grid item xs>
-        <Typography variant={"h5"} gutterBottom>
+        <Typography aria-label={"title"} variant={"h5"} gutterBottom>
           {t("no_data_to_display")}
         </Typography>
       </Grid>
       <Grid item xs>
-        <Typography>
+        <Typography aria-label={"content"}>
           {t(
             "home:please_input_into_search_box_and_select_the_city_that_you_want_to_view"
           )}
