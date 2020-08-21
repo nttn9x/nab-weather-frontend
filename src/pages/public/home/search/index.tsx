@@ -20,6 +20,8 @@ const Search = () => {
   const [state, setState] = useState<any>({ loading: false, cities: [] });
 
   const onChange = async (cityName: string) => {
+    setState({ cities: [], loading: true });
+
     let newCities: ICity[] = [];
     try {
       if (source) {
@@ -31,8 +33,6 @@ const Search = () => {
       }
 
       source = axios.CancelToken.source();
-
-      setState({ cities: [], loading: true });
 
       newCities = await getAllCity({
         params: { cityName },

@@ -14,7 +14,7 @@ export interface IProps {
   keyValue: string;
 }
 
-const timeoutId = 0;
+let timeoutId: any = 0;
 
 export const useAutoCompleteHook = ({
   onChange,
@@ -49,7 +49,7 @@ export const useAutoCompleteHook = ({
 
     clearTimeout(timeoutId);
 
-    setTimeout(() => {
+    timeoutId = setTimeout(() => {
       if (onChange) {
         onChange(value);
       }
